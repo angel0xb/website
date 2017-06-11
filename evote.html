@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>e-voting</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <style>
+    body{
+        padding-top: 20px;
+        background-color: white;
+    }
+    </style>
+    <body>
+<h1>project</h1>
+
+<div id="evoting">
+<h2>e-voting</h2>
+      <p>Description: This is a simple electronic voting system created using Java, 
+          interface with Java Swing, and one way hashing to protect your user password data. System containing two actors  
+          <b>The Voter</b> and <b>The Election Officer</b>. <br>
+          <b>The Voter</b> is able to login and cast a vote.  <br>
+          <b>The Election Officer</b> is able to login and view current results 
+      </p>
+
+<img class="evotepic" src="e-voting/voterID.png" alt="">
+
+<div id="evote" >
+    
+
+      <div id="voter">
+          <h3>Voter</h3>
+      
+      <div class="image">
+          <img src="e-voting/voterlogin.png" alt="" width="300px">
+          <span class="caption">e-voting system begins at the voter login screen. Here the voter must enter the 
+              correct Voter ID and Social creteria. Additionally you can enter a special login to get to Election Officer login(see election officer section)</span>
+          </div>
+      <div class="image">
+          <img src="e-voting/thisyou.png" alt="" width="300px">
+          <span class="caption">you will then be prompted with a confrimation window to confrim 
+              that you have provided the correct credentials. Selecting "yes" will take you the vote screen which is the 
+              sceen with the candidates up for the current election, selecting "no" will take you back to previous screen.</span>
+          </div>
+      <div class="image">
+          <img src="e-voting/vote.png" alt="" width="300px">
+          <span class="caption">Selecting a checkbox and pressing select will then cast your vote. The option to vote 
+              for "NONE" of the NOPARTY is always an option.  
+          </span>
+          </div>
+
+          <!--voter-->
+      </div>
+
+
+      <div id="electionOff">
+
+          <h3>election officer</h3>
+
+             <div class="image">
+          <img src="e-voting/elogin.png" alt="" width="300px">
+          <span class="caption">
+              Entering the correct login information at Voter login screen will take you to the election officer screen. 
+              Here election officers must enter correct Officer ID along with matching Password to continue to Officer Options. 
+              All officers must be preregistered in ElectionOfficer.txt file using the following format Officer ID, Name, Password.
+             </span>
+          </div>
+
+             <div class="image">
+          <img src="e-voting/eoptions.png" alt="" width="300px">
+          <span class="caption">
+              There are three Officer Options "View Results", "View Percentage" and "Log Out". Choosing View Percentage 
+              gives you the total number of registered voters, the amount that have voted and the percentage that have voted <b>(figure 1)</b>.
+              Selecting View Results shows you how many votes each currently candidate has <b>(figure 2)</b>.
+          </span>
+          </div>
+<br>
+             <div class="image">
+          <img src="e-voting/percent.png" alt="" width="300px">
+          <span class="caption">
+              <p><b>figure 1</b></p>
+          </span>
+          </div>
+
+             <div class="image">
+          <img src="e-voting/results.png" alt="" width="300px">
+          <span class="caption">
+              <p><b>figure 2</b></p>
+          </span>
+
+          </div>
+          
+
+          
+      </div>
+
+      <!--<p>All voters must be pre registered within the voter.txt file  <br>
+      containing their login ID, their first and Last name, their age, social(used for logging in) and 
+      true or false for whether they have voted already or not <br>
+      <img src="e-voting/votert.png" alt="" width="150px">
+      </p>-->
+      <!--evote-->
+</div>
+ <!--evoting-->
+    </div>
+    </body>
+</html>

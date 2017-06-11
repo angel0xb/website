@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Atomic Age' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Spicy Rice' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
+    </head>
+    <script>
+        // displays the more information about the evoting system.
+        function displayEvote() {
+            document.getElementById("evoter").style.display = "inline";
+            document.getElementById("bt2").style.display = "inline";
+            // if(document.getElementById("bt1").value == "Show Less"){
+            //     // document.getElementById("bt1").value = "Show More";
+            //     document.getElementById("evoter").style.display = "none";
+            // }
+            // else{
+            //     // document.getElementById("bt1").value = "Show Less";
+            //     document.getElementById("evoter").style.display = "inline";
+            // }
+}
+
+function hideEvote(){
+    document.getElementById("evoter").style.display = "none"
+    document.getElementById("bt2").style.display = "none";
+}
+    </script>
+
+
+
+
+
+
+
+    <body>
+
+    <div class="hero-image">
+    <div class="hero-text">
+    <h1>Angel A Rodriguez</h1>
+    <p> New College of Charleston graduate 
+        with a BA in Computer Science and a minor in Mathematics.</p>
+   
+    <!--hero text-->
+  </div>
+   <nav>
+       <ul>
+       <li><a href="#intro">introduction</a></li>
+       <li><a href="#proj">projects</a></li>
+       <li><a href="#contact">contact</a></li>
+       <li><a href="#res">resume</a></li>
+       </ul>
+   </nav>
+  <!--hero image-->
+  </div>
+
+
+
+
+
+
+
+<!--link to jump to section-->
+<a name="intro">
+    <div class="intro" >
+      <div class="introtext">
+      <h1>introduction</h1>
+      <img class="me" src="me2.jpg" alt="" >
+      <p>I am Angel Rodriguez I am 23 years old currently taking sometime to travel while searching for a job.
+          At the begining of my college career like many others I did not know which career path to follow. 
+         What I did know is that enjoyed problem solving and loved to create and build. Unable to find a career that I found suitable
+         I continued my education. Knowing I was competent math I found interest in the STEM field because of the 
+         great salary wage & scholoarship oportunities these provided. I dove further into this field studying biology, physics and more math. Although I found
+         interest in these courses none felt like something I would like to persue as a career, it wasn't until my sophomore year until one 
+         of my peers introduced me to computer science. Computer science was everything that I was looking for the problem solving, great job oportunities, and being able to create anything 
+         with the use of a computer.  <br> <br>
+           I enjoy using the object ortiented programming paradigm, currently Java and C# are my prefered languages when programming.
+           I am very comfrotable using HTML, CSS and JavaScript when designing websites.
+      </p>
+      <!--introtext-->
+      </div>
+      <!--intro-->
+  </div>
+  </a>
+
+
+
+
+
+
+
+
+
+
+<!--link to jump to section-->
+  <a name="proj">
+  <div class="proj">
+      <div class="projtext">
+      
+      <h1>projects</h1>
+
+      
+
+
+
+
+      <div id="evoting">
+      <h2>e-voting</h2>
+      <p>Description: This is a simple electronic voting system created using Java, 
+          interface with Java Swing, and one way hashing to protect your user password data. System containing two actors  
+          <b>The Voter</b> and <b>The Election Officer</b>. <br>
+          <b>The Voter</b> is able to login and cast a vote.  <br>
+          <b>The Election Officer</b> is able to login and view current results 
+      </p>
+
+<img class="evotepic" src="e-voting/voterID.png" alt="" onclick="displayEvote()">
+<input type="button" name="type"  id="bt1" value="Show More" onclick="displayEvote()">
+
+
+<!--smaller evote.html page-->
+ <div id="evoter"> 
+    <object type="text/html" data="evote.html" >
+    </object>
+<!--evoter-->
+ </div>
+
+
+    <input type="button" name="type"  id="bt2" value="Show Less" onclick="hideEvote()">
+    <!--evoting-->
+    </div>
+
+
+
+
+
+
+
+
+<div id="sitebuilder">
+    
+      <h2>Site Builder</h2>
+      <img class="evotepic" src="sitebuilder/inputfield.png" alt="">
+
+<!--sitebuilder-->
+      </div>
+
+
+      <!--projtext-->
+  </div>
+  <!--proj-->
+  </div>
+  </a>
+  
+    </body>
+</html>
+
