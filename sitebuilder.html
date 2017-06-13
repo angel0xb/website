@@ -4,52 +4,145 @@
         <title>Site Builder</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="main.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Atomic Age' rel='stylesheet'>
         <style>
             
-        h1{
-            width: 600px;
-            text-align: center;
-        }    
-        p{
-            margin: 0 auto;
-            /*margin:4px;*/
-            text-align: left;
-            border: 1px solid black ;
-            width: 600px;
-            
-        }
-        #wrapper{
-          border: 1px solid red ;  
-          width: 800px;
-        }
+    body{
+        padding-top: 20px;
+        background-color: white;
+        /*background-color: crimson;*/
+    }
+    #projdescription{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1{
+        font-family: 'Atomic Age';
+    }
 
-        #images{
-            margin-top: 20px;
-            border: 1px solid green;
-        }
-        img{
-            border: 1px solid blue;
-            margin-left: 10px;
-        }
+    #sitebuilder-info{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 20px;
+
+       
+    }
+ .camview{
+     width: 70%;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+ }
+ .caption2{
+    width: 50%;
+    display: block;
+     margin-left: auto;
+     margin-right: auto;
+ }
         </style>
+
+           <script >
+//    https://stackoverflow.com/questions/13975891/change-image-in-html-page-every-few-seconds
+          function displayNextImage() {
+              x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("camview").src = images[x];
+          }
+
+          function displayPreviousImage() {
+              x = (x <= 0) ? images.length - 1 : x - 1;
+              document.getElementById("camview").src = images[x];
+          }
+
+          function startTimer() {
+              setInterval(displayNextImage, 3000);
+          }
+
+          var images = [], x = -1;
+          images[0] = "sitebuilder/cam2.png";
+          images[1] = "sitebuilder/cam3.png";
+          images[2] = "sitebuilder/cam4.png";
+          images[3] = "sitebuilder/cam1.png";
+      </script>
     </head>
-    <body>
-    <div id = "wrapper"> 
-    <h1>Site Builder</h1>
-    
-    
-    <p>Description:  This project is called Site Builder and it involves creation of an app in Unity that can transform an image of a blueprint or floorplan into 3D geometry.  
-        We need to have this done in Unity 5.5.  C# is our language preference for the Unity code.
-        Beyond that, the students are free to use whatever tools or libraries are compatible with Unity 5.5 on the iOS, Web, and PC platforms.</p>
+    <body onload = "startTimer()">
+        <h1>SiteBuilder</h1>
+    <div id="SiteBuild">
+    <div id="projdescription">
+         <p>
+          Description: Application built using the Unity Engine with scripts written in C#. This appication takes in a file 
+          path to a 2D blueprint image and creates a 3D model of the blueprint. In the 3D model view you are able to move the
+          camera and select the walls using the mouse. Selected wall data is mutable.
+      </p>
 
-    <div id="images">  
-    <img src="house.png" alt="house" height="260px"> <img src="wallgen.png" alt="wallgen" width="500px">
+      <img class="description-pic" src="sitebuilder/inputfield.png" alt="">
     </div>
+      <br>
+      <br>
+      <br>
+       <br>
+      <br>
+      <br>
+      <div id="sitebuilder-info">
+          
+          <div class="image">
+            <img src="sitebuilder/imagepath.png" alt="" width="300px">
+            <span class="caption">SiteBuilder begins at the home screen. Input path to blueprint/floor plan image and press the Enter button</span>
+          </div>
 
-    <p></p>
-    <!--wrapper-->
-    </div> 
+        <div class="image">
+            <img src="sitebuilder/3dmodel.png" alt="" width="300px">
+            <span class="caption">This will bring you to a 3D view model view. With the original outline in white on top of the model</span>
+          </div>
+            <div class="image">
+            <img src="sitebuilder/wallselect.png" alt="" width="300px">
+            <span class="caption">Here you can use the right click on the mouse to select a wall which will quickly be hightlighted in pink and 
+                bring the Wall data interface up
+            </span>
+          </div>
+
+
+
+            <div class="image">
+            <img src="sitebuilder/smallwall.png" alt="" width="300px">
+            <span class="caption">Here we have changed the length of the selected wall. Lets also change the with </span>
+          </div>
+
+            <div class="image">
+            <img src="sitebuilder/otherwallselect.png" alt="" width="300px">
+            <span class="caption">The wall is now shorter and thicker. Lets select another wall and change its height</span>
+          </div>
+
+            <div class="image">
+            <img src="sitebuilder/tallwall.png" alt="" width="300px">
+            <span class="caption">Now we have a tall wall. All dimensions can be changed through inputs and by pressing Submit, 
+                you can toggle the floor on and off Cancel will hide the wall data.
+            </span>
+          </div>
+
+            <br>
+         
+
+            <img class="camview" id="camview"  src="sitebuilder/cam1.png"/>
+            <br>
+          
+            <br>
+            <div class="caption2">
+                <button type="button" onclick="displayPreviousImage()">Previous</button>
+                <button type="button" onclick="displayNextImage()">Next</button>
+                 <br>
+                 Left clicking the mouse and moving the cursor will allow you to rotate the camera angle.
+                 Right clicking the mouse and moving the cursor will allow to move the camera.
+                 Scrolling will allow you to zoom in and out.
+
+            </div>
+
+          <!--sitebuilder-info-->
+        </div>
+        <!--sitebuild-->
+    </div>
 
     </body>
 </html>

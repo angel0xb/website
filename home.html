@@ -8,33 +8,79 @@
         <link href='https://fonts.googleapis.com/css?family=Atomic Age' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Spicy Rice' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
-    </head>
+        <link href="https://fonts.googleapis.com/css?family=Bubbler+One|Open+Sans" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!--jQuery-->
+        <script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // "1.5*$(hash).offset().top" specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      },800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
+
+
+
+</script>
+
     <script>
         // displays the more information about the evoting system.
         function displayEvote() {
-            document.getElementById("evoter").style.display = "inline";
+            document.getElementById("small-e-vote").style.display = "inline";
             document.getElementById("bt2").style.display = "inline";
-            // if(document.getElementById("bt1").value == "Show Less"){
-            //     // document.getElementById("bt1").value = "Show More";
-            //     document.getElementById("evoter").style.display = "none";
-            // }
-            // else{
-            //     // document.getElementById("bt1").value = "Show Less";
-            //     document.getElementById("evoter").style.display = "inline";
-            // }
-}
+};
 
+// hides smaller e voting page
 function hideEvote(){
-    document.getElementById("evoter").style.display = "none"
+    document.getElementById("small-e-vote").style.display = "none";
     document.getElementById("bt2").style.display = "none";
-}
+};
+
+// displays smaller sitebiulder page with more information
+function displaySiteBuild(){
+    document.getElementById("small-sitebuilder").style.display = "inline";
+    document.getElementById("bt3").style.display = "inline";
+};
+
+// hides smaller sitebuilder page
+function hideSiteBuild(){
+    document.getElementById("small-sitebuilder").style.display = "none";
+    document.getElementById("bt3").style.display = "none";
+};
+
+// disables scrolling on main page
+    function disableMainPageOverFlow(){
+
+        document.body.style.overflow = "hidden";
+    };
+
+// enables scrolling on main page
+    function enableMainPageOverFlow(){
+        document.body.style.overflow = "visible";
+    };
     </script>
 
-
-
-
-
-
+    </head>
 
     <body>
 
@@ -51,32 +97,36 @@ function hideEvote(){
        <li><a href="#intro">introduction</a></li>
        <li><a href="#proj">projects</a></li>
        <li><a href="#contact">contact</a></li>
-       <li><a href="#res">resume</a></li>
+       <li><a href="#resume">resume</a></li>
        </ul>
    </nav>
   <!--hero image-->
   </div>
 
 
-
+<!--<div class="begin">
+    <a href="#intro"><h1>Begin</h1></a>
+</div>-->
 
 
 
 
 <!--link to jump to section-->
-<a name="intro">
-    <div class="intro" >
+    <div class="intro" id="intro">
       <div class="introtext">
       <h1>introduction</h1>
       <img class="me" src="me2.jpg" alt="" >
       <p>I am Angel Rodriguez I am 23 years old currently taking sometime to travel while searching for a job.
-          At the begining of my college career like many others I did not know which career path to follow. 
+         
+          <!--At the begining of my college career like many others I did not know which career path to follow. 
          What I did know is that enjoyed problem solving and loved to create and build. Unable to find a career that I found suitable
          I continued my education. Knowing I was competent math I found interest in the STEM field because of the 
          great salary wage & scholoarship oportunities these provided. I dove further into this field studying biology, physics and more math. Although I found
          interest in these courses none felt like something I would like to persue as a career, it wasn't until my sophomore year until one 
          of my peers introduced me to computer science. Computer science was everything that I was looking for the problem solving, great job oportunities, and being able to create anything 
-         with the use of a computer.  <br> <br>
+         with the use of a computer. -->
+         
+          <br> <br>
            I enjoy using the object ortiented programming paradigm, currently Java and C# are my prefered languages when programming.
            I am very comfrotable using HTML, CSS and JavaScript when designing websites.
       </p>
@@ -84,7 +134,7 @@ function hideEvote(){
       </div>
       <!--intro-->
   </div>
-  </a>
+
 
 
 
@@ -96,15 +146,10 @@ function hideEvote(){
 
 
 <!--link to jump to section-->
-  <a name="proj">
-  <div class="proj">
+  <div class="proj" id="proj">
       <div class="projtext">
       
       <h1>projects</h1>
-
-      
-
-
 
 
       <div id="evoting">
@@ -116,23 +161,22 @@ function hideEvote(){
           <b>The Election Officer</b> is able to login and view current results 
       </p>
 
-<img class="evotepic" src="e-voting/voterID.png" alt="" onclick="displayEvote()">
-<input type="button" name="type"  id="bt1" value="Show More" onclick="displayEvote()">
+<img class="description-pic" src="e-voting/voterID.png" alt="" onclick="displayEvote();disableMainPageOverFlow()">
+<br>
+<input type="button" name="type"  id="bt1" value="Show More" onclick="displayEvote(); disableMainPageOverFlow()">
 
 
 <!--smaller evote.html page-->
- <div id="evoter"> 
+ <div id="small-e-vote"> 
     <object type="text/html" data="evote.html" >
     </object>
-<!--evoter-->
+<!--small-e-vote-->
  </div>
 
 
-    <input type="button" name="type"  id="bt2" value="Show Less" onclick="hideEvote()">
+    <input type="button" name="type"  id="bt2" value="Show Less" onclick="hideEvote();enableMainPageOverFlow()">
     <!--evoting-->
     </div>
-
-
 
 
 
@@ -142,7 +186,25 @@ function hideEvote(){
 <div id="sitebuilder">
     
       <h2>Site Builder</h2>
-      <img class="evotepic" src="sitebuilder/inputfield.png" alt="">
+      <p>
+          Description: Application built using the Unity Engine with scripts written in C#. This appication takes in a file 
+          path to a 2D blueprint image and creates a 3D model of the blueprint. In the 3D model view you are able to move the
+          camera and select the walls using the mouse. Selected wall data is mutable.
+      </p>
+
+      <img class="description-pic" src="sitebuilder/inputfield.png" alt="" onclick="displaySiteBuild(); disableMainPageOverFlow()">
+      <br>
+      <input type="button" name="type"   value="Show More" onclick="displaySiteBuild(); disableMainPageOverFlow()">
+
+
+      <!--smaller SiteBuilder.html page-->
+ <div id="small-sitebuilder"> 
+    <object type="text/html" data="sitebuilder.html" >
+    </object>
+<!--sitebuild-->
+ </div>
+
+ <input type="button" name="type"  id="bt3" value="Show Less" onclick="hideSiteBuild();enableMainPageOverFlow()">
 
 <!--sitebuilder-->
       </div>
@@ -152,7 +214,16 @@ function hideEvote(){
   </div>
   <!--proj-->
   </div>
-  </a>
+
+
+  <div class="contact" id="contact">
+      <div class="icons">
+      <a href="mailto:rodriguezaa@g.cofc.edu"> <img class="icon" src="email-icon-white2.png" alt=""></a>
+      <a href="https://github.com/rodriguezaa"> <img class="icon" src="github-icon-white2.png" alt=""></a>
+      <a href="https://www.linkedin.com/in/angel-rodriguez-2b907b143/"> <img class="icon" src="linkedin-icon-white.png" alt=""></a>
+      </div>
+  </div>
+
   
     </body>
 </html>
