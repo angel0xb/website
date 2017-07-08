@@ -44,11 +44,25 @@ $(document).ready(function(){
 </script>
 
     <script>
+
+        var ratio = window.devicePixelRatio || 1;
+        var w = screen.width * ratio;
+
+        $("div.description-pic").hover(function() {
+        $(this).css("width","550px")
+        });
+
         // displays the more information about the evoting system.
         function displayEvote() {
+            // if(w > 768){
             document.getElementById("small-e-vote").style.display = "inline";
             document.getElementById("bt2").style.display = "inline";
+            // }
+            // else{
+            //    document.getElementById("small-e-vote").style.display = "none"; 
+            // }
 };
+
 
 // hides smaller e voting page
 function hideEvote(){
@@ -58,8 +72,11 @@ function hideEvote(){
 
 // displays smaller sitebiulder page with more information
 function displaySiteBuild(){
+  
     document.getElementById("small-sitebuilder").style.display = "inline";
     document.getElementById("bt3").style.display = "inline";
+    
+    
 };
 
 // hides smaller sitebuilder page
@@ -70,20 +87,38 @@ function hideSiteBuild(){
 
 // disables scrolling on main page
     function disableMainPageOverFlow(){
-
+    if(w > 768){
         document.body.style.overflow = "hidden";
+    }
     };
 
 // enables scrolling on main page
     function enableMainPageOverFlow(){
+        if(w > 768){
         document.body.style.overflow = "visible";
+        }
     };
     </script>
 
     </head>
 
     <body>
+        <div class="title">
 
+        <img class="small-hero-image" src="angel.jpg" alt="">
+        <h1 id="name">Angel A Rodriguez</h1>
+        <div id="small-hero-nav">
+            
+            <ul>
+            <li><a href="#intro">introduction</a></li>
+            <li><a href="#proj">projects</a></li>
+            <li><a href="#contact">contact</a></li>
+            <li><a href="#resume">resume</a></li>
+            </ul>
+            
+        </div>
+
+        </div>
     <div class="hero-image">
     <div class="hero-text">
     <h1>Angel A Rodriguez</h1>
@@ -97,7 +132,7 @@ function hideSiteBuild(){
        <li><a href="#intro">introduction</a></li>
        <li><a href="#proj">projects</a></li>
        <li><a href="#contact">contact</a></li>
-       <li><a href="#resume">resume</a></li>
+       <li><a href="#resume" >resume</a> </li>
        </ul>
    </nav>
   <!--hero image-->
@@ -116,9 +151,14 @@ function hideSiteBuild(){
       <div class="introtext">
       <h1>introduction</h1>
       <img class="me" src="me2.jpg" alt="" >
-      <p>I am Angel Rodriguez I am 23 years old currently taking sometime to travel while searching for a job.
+      <p> I am 23 years old. I recently graduated from the College of Charelston Bachelors in Computer Science and a minor in Mathematics.
+          
+          Currently taking sometime to travel while searching for a job.
+          <!--<br>
+          <br>
+          <br>
          
-          <!--At the begining of my college career like many others I did not know which career path to follow. 
+          At the begining of my college career like many others I did not know which career path to follow. 
          What I did know is that enjoyed problem solving and loved to create and build. Unable to find a career that I found suitable
          I continued my education. Knowing I was competent math I found interest in the STEM field because of the 
          great salary wage & scholoarship oportunities these provided. I dove further into this field studying biology, physics and more math. Although I found
@@ -126,9 +166,11 @@ function hideSiteBuild(){
          of my peers introduced me to computer science. Computer science was everything that I was looking for the problem solving, great job oportunities, and being able to create anything 
          with the use of a computer. -->
          
-          <br> <br>
-           I enjoy using the object ortiented programming paradigm, currently Java and C# are my prefered languages when programming.
-           I am very comfrotable using HTML, CSS and JavaScript when designing websites.
+         <br>
+         <br>
+
+           I enjoy using the object ortiented programming, currently Java and C# are my prefered languages when programming.
+           I am very comfortable using HTML, CSS and JavaScript when designing websites.
       </p>
       <!--introtext-->
       </div>
@@ -163,7 +205,7 @@ function hideSiteBuild(){
 
 <img class="description-pic" src="e-voting/voterID.png" alt="" onclick="displayEvote();disableMainPageOverFlow()">
 <br>
-<input type="button" name="type"  id="bt1" value="Show More" onclick="displayEvote(); disableMainPageOverFlow()">
+<input type="button" name="type" class="button" id="bt1" value="Show More" onclick="displayEvote(); disableMainPageOverFlow()">
 
 
 <!--smaller evote.html page-->
@@ -174,7 +216,7 @@ function hideSiteBuild(){
  </div>
 
 
-    <input type="button" name="type"  id="bt2" value="Show Less" onclick="hideEvote();enableMainPageOverFlow()">
+    <input type="button" name="type" class="button" id="bt2" value="Show Less" onclick="hideEvote();enableMainPageOverFlow()">
     <!--evoting-->
     </div>
 
@@ -194,7 +236,7 @@ function hideSiteBuild(){
 
       <img class="description-pic" src="sitebuilder/inputfield.png" alt="" onclick="displaySiteBuild(); disableMainPageOverFlow()">
       <br>
-      <input type="button" name="type"   value="Show More" onclick="displaySiteBuild(); disableMainPageOverFlow()">
+      <input type="button" name="type"  class="button" value="Show More" onclick="displaySiteBuild(); disableMainPageOverFlow()">
 
 
       <!--smaller SiteBuilder.html page-->
@@ -204,7 +246,7 @@ function hideSiteBuild(){
 <!--sitebuild-->
  </div>
 
- <input type="button" name="type"  id="bt3" value="Show Less" onclick="hideSiteBuild();enableMainPageOverFlow()">
+ <input type="button" name="type" class="button" id="bt3" value="Show Less" onclick="hideSiteBuild();enableMainPageOverFlow()">
 
 <!--sitebuilder-->
       </div>
@@ -218,12 +260,20 @@ function hideSiteBuild(){
 
   <div class="contact" id="contact">
       <div class="icons">
+      <!--<a href="https://www.facebook.com/arodeleven"> <img class="icon" src="facebook-icon-white.png" alt=""></a>-->
       <a href="mailto:rodriguezaa@g.cofc.edu"> <img class="icon" src="email-icon-white2.png" alt=""></a>
       <a href="https://github.com/rodriguezaa"> <img class="icon" src="github-icon-white2.png" alt=""></a>
       <a href="https://www.linkedin.com/in/angel-rodriguez-2b907b143/"> <img class="icon" src="linkedin-icon-white.png" alt=""></a>
       </div>
+      <br>
+        <a id="resume" href="Angel-Resume.pdf" target="_blank">Resume</a>  
+      <p>website created by me <br>
+      
+      </p>
+      
   </div>
 
+    <!--<embed class="resume" src="Angel-Resume.pdf" width="800px" height="800px" />-->
   
     </body>
 </html>
